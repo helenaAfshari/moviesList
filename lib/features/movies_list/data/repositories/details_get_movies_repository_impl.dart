@@ -20,5 +20,4 @@ class DetailsGetMoviesRepositoryImpl implements DetailsGetMoviesRepository{
   }
 }
 
-
 }

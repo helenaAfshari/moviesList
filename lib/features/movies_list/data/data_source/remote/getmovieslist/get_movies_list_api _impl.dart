@@ -9,6 +9,6 @@ final GetMoviesListApi _api;
   @override
   Future<List<GetMoviesListEntity>> getMoviesList() async {
       return await _api.getMoviesList();
-    
+      
   }
 }
