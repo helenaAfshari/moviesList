@@ -94,21 +94,32 @@ class MyHomePage extends StatelessWidget {
             ),
           );
         },
-        child: Container(
-          color: Colors.amber,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(movie.title),
-              Wrap(
-                children: movie.genres.map((genre) => Text(genre)).toList(),
-              ),
-              Wrap(
-                children: movie.images.map((image) => Image.network(image)).toList(),
-              ),
-            ],
-          ),
-        ),
+        child:Container(
+  color: Colors.amber,
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(movie.title),
+      Wrap(
+        spacing: 8.0, // فاصله بین عناصر
+        runSpacing: 8.0, // فاصله بین ردیف‌ها
+        children: movie.genres.map((genre) => Text(genre)).toList(),
+      ),
+      Wrap(
+        spacing: 8.0, // فاصله بین تصاویر
+        runSpacing: 8.0, // فاصله بین ردیف‌های تصاویر
+        children: movie.images.map((image) => 
+          Container(
+            width: 100.0, // عرض تصویر
+            height: 100.0, // ارتفاع تصویر
+            child: Image.network(image, fit: BoxFit.cover),
+          )
+        ).toList(),
+      ),
+    ],
+  ),
+)
+
       ),
     );
   },
